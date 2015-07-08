@@ -1,0 +1,107 @@
+@charset "utf-8";
+/* CSS Document */
+
+label{ font-weight:normal !important;}
+
+input[type=text]:focus, textarea:focus{
+	border: 1px solid #eae8e8;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+input[type=text], textarea{
+	border: 1px solid #eae8e8;
+    overflow: auto;
+    outline: none;
+	-webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+textarea{resize:none;border: 1px solid #eae8e8;}
+
+
+body{ background:#f3f5f6;font-family: 'Open Sans Condensed', sans-serif !important;}
+h1,h2,h3,h4,h5,h6, .lbl2{font-family: 'Economica', sans-serif !important;}
+th{font-family: 'Economica', sans-serif !important; font-size:18px;}
+
+
+p{ color:#666;}
+.container-fluid{ padding-bottom:60px !important;}
+.logo{ display:block;}
+.logo img{ text-align:center;}
+.title{ padding-bottom:10px;margin-bottom:10px; font-size:30px; display:inline-block !important;}
+.h3{ color:#002437; margin-top:40px;}
+.h4{ color:#002437; margin-top:25px;font-size: 24px !important;}
+.page-header{ background:#025175; border-bottom:2px solid #024564;}
+.tbl_head{ background:#8197a2;}
+.tbl_head th{ color:#FFF;}
+table{background:#ffffff;}
+.footer{background:#000;}
+a{ margin:10px 0; display:inline-block;}
+.br_btm{ border-bottom:#999 1px dotted; min-height:30px;}
+.footer{ position:fixed; bottom:0px; min-height:25px; width:100%; left:0px;}
+.foot_txt{ color:#999; padding:5px !important; font-size:10px; margin:0px !important;}
+.subscription{border-top:none !important; border-left:none !important; border-right:none !important;border-bottom:#999 1px dotted !important; margin-left:10px; min-height:30px; background:none; border-radius:0px; float:left;color:#FFF; width:75%;}
+.subscription:focus, .style1:focus, textarea:focus, .txt1:focus, input:focus{
+    outline: 0 !important;
+	min-height:30px;
+}
+.row1{padding:10px 0px;}
+.style1{border:none !important;background:none; border-radius:0px; outline:none;}
+.lbl1{ margin-bottom:15px;color: #666666;}
+.lbl2{ color:#FFF; font-size:16px;}
+textarea{ margin-bottom:15px !important; min-width:100%; max-width:100%;}
+.status_div{ margin-top:20px;}
+select{ margin:5px 0px 20px 0px;}
+.link{ margin:0 !important; padding:0 !important;}
+.sign_box{ margin-top:10%;}
+.sign_head{ margin-bottom:25px; display:inline-block;}
+.form-signin{ display:block;}
+
+.photo{ margin:10px 0; text-align:center; border:3px solid #eae8e8;border-radius:10px;box-shadow:1px 1px 1px 1px #ccc;}
+.complaint_id{ color:#9a9ea0; padding-left:10px;}
+.title_brd{height:1px; background-color:#ccc; margin-bottom:50px !important; clear:both !important;}
+.box{min-height:200px; margin-top:60px;text-align:center;}
+.box_l{ margin-top:120px;min-height:250px;}
+.box_r{ margin-top:120px;min-height:250px;}
+.price{color:#479ccf; font-weight:normal;}
+abbr{
+  vertical-align: super;
+  font-size:20px;color:#479ccf;}
+.price_plan{background:#0e83b8;}
+.price_plan2{background:#055579;}
+.box_content{border:1px solid #d4ecf8; background:#FFF;border-radius:10px; height:100%; width:100%; padding:0px !important; overflow:hidden; padding-bottom:20px !important;}
+.box_content2{min-height:300px;}
+.plan{ color:#fff;text-shadow:1px 1px #000;}
+.navbar-default .navbar-toggle{ background:#034360;}
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: #fff;
+}
+.navbar{ border-bottom:none;}
+.txt1{ background:#025175; border:1px solid #2b7ba0 !important; color:#2b7ba0 !important;}
+.nav_bg{ padding:8px 16px;border-radius:5px; background:#013e59;}
+.btn-primary{ margin-right:15px;}
+
+.pay_link{ color:#FFF; margin:10px 10px;}
+.pay_link:hover{ color:#337ab7; text-decoration:underline;}
+.pay_link:visited, .pay_link:active{ color:skyblue;
+}
+.btn1{margin-top:5px !important;margin-right:0px !important;margin-bottom:5px !important;}
+.btn1:hover{color: #fff;
+  background-color:#002437;
+  border-color:#04334b;}
+  
+.navbar-default .navbar-nav > li > a:hover{ color:#666;}
+.status{color:#FFF;border-radius:5px;border:1px solid #ccc !important; padding:5px 8px; display:inline-block; margin:5px; margin-left:15px;}
+.login{color:#ccc;display: inline-block;margin-top: 10px;}
+.open > .login-menu{ background:#025175; bottom:0px; display:inline-block; height:100px; width:100px; padding:20px; right:0px !important;min-width: 100%;}
+.form-group > div{ padding:0px !important;}
+.alert_img{ position:absolute; top:0px; right:0px;}
+
+
+
+
+

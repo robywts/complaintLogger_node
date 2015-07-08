@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Call logger</title>
+
+	<!--call log theme-->
+    <link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap.css">
+    
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="../stylesheets/theme.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../javascripts/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../javascripts/bootstrap.min.js"></script>
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+    
+    
+  </head>
+  <body>
+  
+    <nav class="navbar navbar-default">    
+    <form> 
+    
+<div class="container-fluid">
+<div class="row page-header">
+
+
+<div class="col-xs-12 col-sm-6 col-md-2 col-lg-3 text-center">
+
+<h3 class="h4"></h3>
+
+
+</div>
+
+
+<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+    </div>
+    
+<!-- Collect the nav links, forms, and other content for toggling -->
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#"><span class="nav_bg">HOME</span><span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="#">LINK</a></li>
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>-->
+      </ul>
+      
+      
+    </div>
+    
+<!-- /.navbar-collapse -->
+
+
+</div>
+
+
+<div class="col-xs-12 col-sm-12 col-md-7 col-lg-6 status_div">
+
+<div class="col-xs-12 col-sm-8 col-md-7 col-lg-8 pull-left">
+
+<form>
+
+  <div class="form-group">
+  	<div class="col-xs-5 col-sm-6 col-md-6 col-lg-6 text-right"><label for="" class="lbl2">Your subscription ends by :</label></div>
+  	<div class="col-xs-7 col-sm-6 col-md-6 col-lg-6 pull-left">
+          <div class="pull-left">
+            <input type="text" class="subscription" id="" placeholder="" style="float:left;">
+            <img src="../images/alert1.gif" style="float:left;"/>
+		 </div>
+    </div>
+  	<div class="col-xs-7 col-sm-6 col-md-6 col-lg-6 pull-right text-left"><a href="/complaint_logger/home/subscription" class="pay_link"><b>Click to pay</b></a></div>
+  
+  
+  
+  <Div class="clearfix"></Div>
+  </div>
+
+  
+</form>
+
+
+
+</div>
+
+<!--login details start-->
+<div class="col-xs-12 col-sm-4 col-md-5 col-lg-4 text-right">
+  <span id="dLabel" class="login" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    <%= OrgMail%>
+    <span class="caret"></span>
+  </span>
+	
+  <ul class="dropdown-menu login-menu" aria-labelledby="dLabel">
+    <li class="text-right"><button type="button" class="btn btn-primary" onClick="signOut();">Sign Out</button>
+    <div class="clearfix"></div>
+    </li>
+  </ul>
+</div>
+<!--login details end-->
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+<div class="col-xs-12"><h2 class="title"><%= organization%> Dashboard</h2>
+
+</div>
+
+<hr class="title_brd" />
+
+
+<div class="col-xs-12">
+
+<table class="table table-bordered">
+<tr class="tbl_head">
+          <th>Si</th>
+          <th>Date</th>
+          <th>Complaint Header</th>
+          <th>User</th>
+          <th>Status</th>
+          <th class="col-xs-1">View</th>
+</tr>
+<% var i=0%>
+<% user.forEach(function(item){%>
+<tr>
+<% i++ %>
+<td><%= i %></td>
+<td><%= item.date%></td>
+<td><%= item.header%></td>
+<td><%= item.name%></td>
+<% if(item.status ==0){ %>
+<td>Submitted</td>
+<% }else if(item.status ==1){%>
+<td>Processing</td>
+<% }else if(item.status ==2){%>
+<td>Completed</td>
+<%} else if(item.status ==3){%>
+<td>Discarded</td>
+<%}else {%>
+<td>No status</td>
+<%}%>
+
+<td><input type="button" class="btn btn btn-sm btn1" value = "Details" id = "" onClick = "editDetails(<%= item.cId%>);"></td>
+</tr>
+<%});%>
+
+</table>
+
+
+</div>
+
+
+
+<div class="footer">
+<P class="foot_txt">Copyright © 2008-2014 by Call logger. All rights reserved.</P>
+</div>
+
+</div>
+
+    </form>
+    </nav>
+
+</body>
+</html>
+<script>
+var cid;
+       function editDetails(cid){
+          window.location.href = '/complaint_logger/home/admin_complaint_view/' + cid;
+   }
+function signOut(){
+          window.location.href = '/complaint_logger';
+   }
+</script>
